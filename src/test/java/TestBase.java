@@ -13,7 +13,8 @@ public class TestBase {
     //open app
     public void init() {
         wd = new ChromeDriver();
-        wd.navigate().to("https://contacts-app.tobbymarshall815.vercel.app/home");
+        wd.navigate().to("https://telranedu.web.app/home");
+                //.to("https://contacts-app.tobbymarshall815.vercel.app/home");
     }
 
     //
@@ -68,12 +69,8 @@ public class TestBase {
 
    public boolean isLogged() {
         //is user logged?
-       WebElement signOutButton = wd.findElement(By.xpath("//button"));
-       if (signOutButton.getText().equals("Sign Out")) {
-           return true;
-       }
-        return false;
-    }
+          return isElementPresent(By.xpath("//button[text()='/Sign Out']"));
+        }
 
     public void logout() {
         //to do log out
