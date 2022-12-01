@@ -12,7 +12,7 @@ public class RegistrationTest extends TestBase{
             logout();
         }
     }
-  /*  @Test
+    @Test
     public void registrationPositiveTest(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         String email = "name" + i + "@mail.com";
@@ -24,9 +24,9 @@ public class RegistrationTest extends TestBase{
         pause(3);
         Assert.assertTrue(isElementPresent(By.xpath("//button")));
 
-    }*/
+    }
 
-    @Test
+   /* @Test
     public void registrationWrongEmail(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         String email = "name" + i + "mail.com";
@@ -97,6 +97,6 @@ public class RegistrationTest extends TestBase{
         submitRegistration();
         pause(3);
 
-    }
+    }*/
 
 }
