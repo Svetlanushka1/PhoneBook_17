@@ -1,29 +1,36 @@
+import manager.ApplicationManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-    WebDriver wd;
+    public static ApplicationManager app = new ApplicationManager();
+    //static will be run before all methods
+ //   WebDriver wd;
 
     @BeforeSuite
     //open app
-    public void init() {
-        wd = new ChromeDriver();
-        wd.navigate().to("https://telranedu.web.app/home");
+        public void setUp() {
+        app.init();
                 //.to("https://contacts-app.tobbymarshall815.vercel.app/home");
     }
 
+    @AfterSuite
+    public void tearDawn(){
+        app.stop();
+    }
     //
-    public void click(By locator) {
+   /* public void click(By locator) {
         //click by locator
         wd.findElement(locator).click();
-    }
+    }*/
 
-    public void type(By locator, String text) {
+   /* public void type(By locator, String text) {
         //input text to field
         //find html locator and put it to 'element'
         WebElement element = wd.findElement(locator);
@@ -33,9 +40,9 @@ public class TestBase {
         element.clear();
         //type to field text
         element.sendKeys(text);
-    }
+    }*/
 
-    public void openLoginRegistrationForm() {
+  /*  public void openLoginRegistrationForm() {
         //click() + wd.locator -> tab [LOGIN]
         click(By.xpath("//a[text()='LOGIN']"));
 
@@ -45,9 +52,9 @@ public class TestBase {
         //to fill form (locator(where) + data(what)
         type(By.xpath("//input[1]"), email);
         type(By.xpath("//input[2]"), password);
-    }
+    }*/
 
-    public void submitLogin() {
+   /* public void submitLogin() {
         // click button [Login]
         click(By.xpath("//button[1]"));
     }
@@ -55,19 +62,19 @@ public class TestBase {
     public void submitRegistration() {
         //click button [Register]
         click(By.xpath("//button[2]"));
-    }
+    }*/
 
-    public boolean isElementPresent(By locator) {
+   /* public boolean isElementPresent(By locator) {
         //is this element on the Web page? return true, if such element more than 0
         return wd.findElements(locator).size() > 0;
-    }
+    }*/
 
-    public void pause(int time) {
+  /*  public void pause(int time) {
         //to postpone WebBrowser from action for a few min
         wd.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
-    }
+    }*/
 
-   public boolean isLogged() {
+  /* public boolean isLogged() {
         //is user logged?
           return isElementPresent(By.xpath("//button[text()='/Sign Out']"));
         }
@@ -76,11 +83,10 @@ public class TestBase {
         //to do log out
         WebElement signOutButton = wd.findElement(By.xpath("//button"));
         if (signOutButton.getText().equals("Sign Out")) {
-            click(By.xpath("//button"));
-        }
+            click(By.xpath("//button[text()='/Sign Out']"));
+       }*/
 
 
-    }
 
 
 }
