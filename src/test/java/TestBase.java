@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,6 +20,14 @@ public class TestBase {
         app.init();
                 //.to("https://contacts-app.tobbymarshall815.vercel.app/home");
     }
+   /* @Test
+    public void login(){
+        String email = "name851@mail.com";
+        String password = "Haifa082022$";
+        app.getUser().openLoginRegistrationForm();
+        app.getUser().fillingLoginRegistrationForm(email, password);
+        app.getUser().submitLogin();
+    }*/
 
     @AfterSuite
     public void tearDawn(){
