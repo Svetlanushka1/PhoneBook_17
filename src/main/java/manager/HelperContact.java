@@ -6,12 +6,11 @@ import org.openqa.selenium.WebDriver;
 public class HelperContact extends HelperBase {
     public HelperContact(WebDriver wd) { super(wd);}
 
-
     public void openAddNewContactForm() {
         //click() + wd.locator -> tab [LOGIN]
         click(By.xpath("//a[@href='/add']"));
-
-    }
+        //a[text()='ADD']
+        }
 
     public void submitAddNewContact() {
         // click button [Save]
@@ -19,17 +18,15 @@ public class HelperContact extends HelperBase {
     }
 
     public void fillingAddContactForm(String name, String lastName, String phone, String email, String address, String description) {
-        type(By.xpath("//input[@placeholder='Name'],name"));  //div.add_form__2rsm2>input:first-child
+        /*type(By.xpath("//input[@placeholder='Name'],name"));  //div.add_form__2rsm2>input:first-child
         type(By.xpath("//input[@placeholder='Last Name'],lastName"));
         type(By.xpath("/input[@placeholder='Phone'],phone"));
         type(By.xpath("//input[@placeholder='email'],email"));
         type(By.xpath("//input[@placeholder='Address'],address"));
-        type(By.xpath("//input[@placeholder='description'],description"));
+        type(By.xpath("//input[@placeholder='description'],description"));*/
 
     }
 
-    private void type(By xpath) {
-    }
 
 
 }

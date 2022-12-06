@@ -19,6 +19,7 @@ public class TestBase {
         public void setUp() {
         app.init();
                 //.to("https://contacts-app.tobbymarshall815.vercel.app/home");
+        //https://telranedu.web.app/home
     }
    /* @Test
     public void login(){

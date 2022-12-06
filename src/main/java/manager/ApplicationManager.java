@@ -12,7 +12,7 @@ public class ApplicationManager {
         return user;
     }
 
-    public HelperContact getContact() {
+   public HelperContact getContact() {
         return contact;
     }
 
@@ -21,7 +21,7 @@ public class ApplicationManager {
         wd.navigate().to("https://telranedu.web.app/home");
         //.to("https://contacts-app.tobbymarshall815.vercel.app/home");
         user = new HelperUser(wd);
-        contact = new HelperContact(wd);
+        //contact = new HelperContact(wd);
     }
 
     public void stop() {

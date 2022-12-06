@@ -1,22 +1,21 @@
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class AddNewContactTest extends TestBase {
+
     @BeforeClass
     public void preCondition() {
         //check that user login
-        if (app.getUser().isElementPresent(By.xpath("//a[@href='/add']"))) {
+        if (app.getUser().isElementPresent(By.xpath("//a[text()='ADD']"))) {
             System.out.println("Add tab present");
+        } else {
             app.getUser().login();
 
         }
 
-        //button[text()='Sign Out']
     }
-    // public void clickAddContact()
 
     @Test
     public void addNewContactPositive() {
@@ -31,17 +30,15 @@ public class AddNewContactTest extends TestBase {
         app.getContact().fillingAddContactForm(name, lastName, phone, email, address, description);
         app.getContact().submitAddNewContact();
         System.out.println(name + email);
-
-        //app.getUser().fillAddContactForm(name,lastName,phone,email,address,description);
-        app.getUser().submitAddNewContact();
+        
     }
 
    /* @Test
     public void addNewContactNegative() {
 
-        */
 
-    }
+
+    }*/
 
 }
 

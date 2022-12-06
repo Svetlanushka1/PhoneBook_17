@@ -2,10 +2,10 @@ package manager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 public class HelperUser extends HelperBase {
     public HelperUser(WebDriver wd) {
+
         super(wd);
     }
 
@@ -19,10 +19,6 @@ public class HelperUser extends HelperBase {
         click(By.xpath("//button[2]"));
     }
 
-    public void submitAddNewContact() {
-        click(By.xpath("//b[text()='Save']"));
-    }
-
     public boolean isLogged() {
         //is user logged?
         return isElementPresent(By.xpath("//button[text()='/Sign Out']"));
@@ -30,10 +26,8 @@ public class HelperUser extends HelperBase {
 
     public void logout() {
         //to do log out
-        WebElement signOutButton = wd.findElement(By.xpath("//button"));
-        if (signOutButton.getText().equals("Sign Out")) {
-            click(By.xpath("//button[text()='/Sign Out']"));
-        }
+        click(By.xpath("//button[text()='/Sign Out']"));
+
     }
 
     public void openLoginRegistrationForm() {
@@ -42,7 +36,6 @@ public class HelperUser extends HelperBase {
 
     }
 
-
     public void fillingLoginRegistrationForm(String email, String password) {
         //to fill form (locator(where) + data(what)
         type(By.xpath("//input[1]"), email);
@@ -50,6 +43,7 @@ public class HelperUser extends HelperBase {
     }
 
     public void login() {
+
         // String email = "Haifa@gmail.com";
         String email = "name851@mail.com";
         String password = "Haifa082022$";
@@ -62,7 +56,10 @@ public class HelperUser extends HelperBase {
 
     }
 
-
-
-
+    /*public void submitAddNewContact() {
+        click(By.xpath("//b[text()='Save']"));
+    }*/
 }
+
+
+
