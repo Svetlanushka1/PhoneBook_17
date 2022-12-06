@@ -51,7 +51,7 @@ public class List_of_locators {/*
         //input[@placeholder='description' ]
 
         button Save
-        ////b[text()='Save'] //button/b
+        //b[text()='Save'] //button/b
         div[class='add_form__2rsm2'] button b
 
 

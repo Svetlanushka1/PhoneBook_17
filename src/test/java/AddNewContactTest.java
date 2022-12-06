@@ -26,11 +26,14 @@ public class AddNewContactTest extends TestBase {
         String email = "name" + i + "@mail.com";
         String address = "address" + i;
         String description = "friend" + i;
+
         app.getContact().openAddNewContactForm();
+        app.getUser().pause(2);
         app.getContact().fillingAddContactForm(name, lastName, phone, email, address, description);
+        app.getUser().pause(2);
         app.getContact().submitAddNewContact();
         System.out.println(name + email);
-        
+
     }
 
    /* @Test
