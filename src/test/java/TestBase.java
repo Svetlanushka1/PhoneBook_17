@@ -18,10 +18,16 @@ public class TestBase {
     //open app
         public void setUp() {
         app.init();
-                //.to("https://contacts-app.tobbymarshall815.vercel.app/home");
+        //.to("https://contacts-app.tobbymarshall815.vercel.app/home");
         //https://telranedu.web.app/home
     }
-   /* @Test
+
+    @AfterSuite
+    public void tearDawn(){
+
+        app.stop();
+    }
+    /* @Test
     public void login(){
         String email = "name851@mail.com";
         String password = "Haifa082022$";
@@ -30,11 +36,6 @@ public class TestBase {
         app.getUser().submitLogin();
     }*/
 
-    @AfterSuite
-    public void tearDawn(){
-        app.stop();
-    }
-    //
    /* public void click(By locator) {
         //click by locator
         wd.findElement(locator).click();

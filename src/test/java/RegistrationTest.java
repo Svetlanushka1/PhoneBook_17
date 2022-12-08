@@ -12,7 +12,7 @@ public class RegistrationTest extends TestBase{
             app.getUser().logout();
         }
     }
-   /* @Test
+   @Test
     public void registrationPositiveTest(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         String email = "name" + i + "@mail.com";
@@ -26,19 +26,21 @@ public class RegistrationTest extends TestBase{
         app.getUser().pause(3);
         Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button[text()='/Sign Out']")));
 
-    }*/
+    }
 
     @Test
     public void registrationWrongEmail(){
         int i = (int)(System.currentTimeMillis()/1000)%3600;
         String email = "name" + i + "mail.com";
         String password = "Haifa082022$";
+
         app.getUser().openLoginRegistrationForm();
         app.getUser().fillingLoginRegistrationForm(email,password);
         app.getUser().submitRegistration();
         app.getUser().pause(3);
         //Click Button to see alert [contains(text()),'OK')])
-        Assert.assertFalse(app.getUser().isElementPresent(By.xpath("//button[text()='/Sign Out']")));
+        Assert.assertFalse(app.getUser().isElementPresent(By.xpath("//button")));
+        //button[text()='/Sign Out']
         //Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//div[contains(text(),'Login Failed with code 401')]")));
 
     }

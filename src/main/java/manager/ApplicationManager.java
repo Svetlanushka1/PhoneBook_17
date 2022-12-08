@@ -6,15 +6,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class ApplicationManager {
     WebDriver wd;
     HelperUser user;
-    HelperContact contact;
+    //HelperContact contact;
 
     public HelperUser getUser() {
         return user;
     }
 
-   public HelperContact getContact() {
+   /*public HelperContact getContact() {
         return contact;
-    }
+    }*/
 
     public void init() {
         wd = new ChromeDriver();

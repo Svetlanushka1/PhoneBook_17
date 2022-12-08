@@ -2,10 +2,10 @@ package manager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 public class HelperUser extends HelperBase {
     public HelperUser(WebDriver wd) {
-
         super(wd);
     }
 
@@ -21,18 +21,20 @@ public class HelperUser extends HelperBase {
 
     public boolean isLogged() {
         //is user logged?
-        return isElementPresent(By.xpath("//button[text()='/Sign Out']"));
+        return isElementPresent(By.xpath("//button"));
+                //button[text()='/Sign Out']
     }
 
     public void logout() {
         //to do log out
-        click(By.xpath("//button[text()='/Sign Out']"));
-
+        click(By.xpath("//button"));
+        //button[text()='/Sign Out']
     }
 
     public void openLoginRegistrationForm() {
         //click() + wd.locator -> tab [LOGIN]
-        click(By.xpath("//a[text()='LOGIN']"));
+        //click(By.xpath("//a[text()='LOGIN']"));
+        click(By.cssSelector("a[href='/login']"));
 
     }
 
@@ -52,7 +54,9 @@ public class HelperUser extends HelperBase {
         submitLogin();
         pause(5);
         //if there is such element on the page , says True
-        //  Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
+        //Assert.assertTrue(isElementPresent(By.xpath("//button")));
+        Assert.assertTrue(isElementPresent(By.cssSelector("a[href='/add']")));
+
 
     }
 

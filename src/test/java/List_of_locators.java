@@ -28,7 +28,7 @@ public class List_of_locators {/*
         ADD page
         tab ADD
         //a[@href='/add']  //a[text()='ADD']
-        //h1/following-sibling::a[5]
+
 
         Field Name
         //input[@placeholder='Name']

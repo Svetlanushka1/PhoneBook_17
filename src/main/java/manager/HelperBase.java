@@ -10,7 +10,6 @@ public class HelperBase {
     WebDriver wd;
 
     public HelperBase(WebDriver wd) {
-
         this.wd = wd;
     }
     public boolean isElementPresent(By locator) {
@@ -35,5 +34,11 @@ public class HelperBase {
     public void pause(int time) {
         //to postpone WebBrowser from action for a few min
         wd.manage().timeouts().implicitlyWait(time, TimeUnit.SECONDS);
+    }
+
+    //get info about new add contact:
+    public String getText(By locator){
+        return wd.findElement(locator).getText();
+
     }
 }

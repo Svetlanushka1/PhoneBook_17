@@ -8,9 +8,9 @@ public class HelperContact extends HelperBase {
         super(wd);
     }
 
-    public void openAddNewContactForm() {
+  /*  public void openAddNewContactForm() {
         //click() + wd.locator -> tab [LOGIN]
-        click(By.xpath("//a[text()='ADD']"));
+        click(By.cssSelector("a[href='/login']"));
         //a[@href='/add']
     }
 
@@ -30,5 +30,5 @@ public class HelperContact extends HelperBase {
         click(By.xpath("//b[text()='Save']"));
     }
 
-
+*/
 }
