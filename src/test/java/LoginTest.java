@@ -1,3 +1,4 @@
+import modals.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,7 +23,8 @@ public class LoginTest extends TestBase {
             app.getUser().logout();
         }
     }*/
-    @Test
+
+   /* @Test
         public void loginPositiveTest() {
         //openLogin/Reg form
         WebElement loginBtn = wd.findElement(By.xpath("//a[text()='LOGIN']"));
@@ -43,7 +45,7 @@ public class LoginTest extends TestBase {
         wd.findElement(By.xpath("//button[1]")).click();
 
         // Assert
-//        pause(3);
+          //pause(3);
        // Assert.assertTrue(wd.findElement(By.cssSelector("a[href='/add']"))!=null);
         Assert.assertTrue(wd.findElement(By.xpath("//div/a[contains(text(),'ADD')]"))!=null);
 
@@ -55,9 +57,9 @@ public class LoginTest extends TestBase {
         submitLogin();
         pause(5);
         //if there is such element on the page , says True
-        //  Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));*/
+        //  Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//button")));
 
-    }
+    }*/
 
    /* @Test
     public void loginNegativeTest() {
@@ -77,6 +79,17 @@ public class LoginTest extends TestBase {
 
 
     }*/
+
+    @Test
+    public void loginSuccess(){
+        User data = new User()
+                .withEmail("name851@mail.com")
+                    .withPassword("Haifa082022$");
+        app.getUser().openLoginRegistrationForm();
+        app.getUser().fillingLoginRegistrationForm(data.getEmail(), data.getPassword());
+        app.getUser().submitLogin();
+    }
+
     @AfterMethod
     public void tearDown(){
        // wd.quit();

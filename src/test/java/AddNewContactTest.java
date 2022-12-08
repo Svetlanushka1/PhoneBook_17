@@ -49,7 +49,7 @@ public class AddNewContactTest extends TestBase {
 
     @Test
     public void addNewContactPositiveTest(){
-        app.getUser().click(By.xpath("//a[@href='/add']"));
+        //app.getUser().click(By.xpath("//a[@href='/add']"));
         app.getUser().click(By.cssSelector("a[href='/add']"));
 
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
