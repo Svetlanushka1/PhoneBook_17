@@ -1,7 +1,10 @@
 package manager;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class HelperUser extends HelperBase {
@@ -22,7 +25,7 @@ public class HelperUser extends HelperBase {
     public boolean isLogged() {
         //is user logged?
         return isElementPresent(By.xpath("//button"));
-                //button[text()='/Sign Out']
+        //button[text()='/Sign Out']
     }
 
     public void logout() {
@@ -57,13 +60,40 @@ public class HelperUser extends HelperBase {
         //Assert.assertTrue(isElementPresent(By.xpath("//button")));
         Assert.assertTrue(isElementPresent(By.cssSelector("a[href='/add']")));
 
+    }
+
+    public boolean isAlertPresent() {
+        //wait 10 sec until see alert
+        Alert alert = new WebDriverWait(wd, 10)
+                .until(ExpectedConditions.alertIsPresent());
+        if (alert == null) {
+            return false;
+        } else {
+            //switch focus to alert
+            wd.switchTo().alert();
+            System.out.println(alert.getText());
+            alert.accept(); //for OK button
+            //alert.dismiss(); for Cancel button
+            //alert.sendKeys(); for input data
+            return true;
+        }
 
     }
 
+    public boolean isErrorMessageInFormat() {
+        Alert alert = new WebDriverWait(wd, 10)
+                .until(ExpectedConditions.alertIsPresent());
+        String errorMessage = "Wrong email or password";
+        return alert.getText().contains(errorMessage);
+
+
+    }
+
+}
     /*public void submitAddNewContact() {
         click(By.xpath("//b[text()='Save']"));
     }*/
-}
+
 
 
 

@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -74,17 +75,61 @@ public class AddNewContactTest extends TestBase {
                         "//div[@class='contact-item_card__2SOIM'][last()]//h3")).equals(phone)
         );
     }
+    /* @Test
+    public void addNewContactNegative() {
+    }*/
 
-//    @AfterMethod
+   @AfterMethod
+    public void postCondition(){
+
+
+   }
+
 
 }
 
-   /* @Test
-    public void addNewContactNegative() {
+
+    /*
+**********************************************************
+
+        Sign Out button full //div[@class='navbar-logged_nav__2Hx7M']/button    css:.navbar-logged_nav__2Hx7M>button
+        WebElement signOutButton = wd.findElement(By.xpath("//button"));
+
+        CONTACTS tab css:a:nth-child(4)
+        WebElement contactsTab = wd.findElement(By.xpath("//a[3]"));
+
+        *
+        ADD page
+        tab ADD
+        //a[@href='/add']  //a[text()='ADD']
 
 
+        Field Name
+        //input[@placeholder='Name']
+        div.add_form__2rsm2>input:first-child
 
-    }*/
+        field LastName
+        //input[@placeholder='Last Name']
+        input[placeholder='Name']
+
+        field Phone
+        //input[@placeholder='Phone' ]
+
+        field email
+        //input[@placeholder='email' ]
+
+        field Address
+        //input[@placeholder='Address' ]
+
+        field description
+        //input[@placeholder='description' ]
+
+        button Save
+        //b[text()='Save'] //button/b
+        div[class='add_form__2rsm2'] button b
+
+
+    */
 
 
 
