@@ -76,7 +76,47 @@ public class AddNewContactTest extends TestBase {
         );
     }
     /* @Test
-    public void addNewContactNegative() {
+   New Contact
+T16 Contact name is required
+T17 Contact name must not be blank
+T18 Numbers are allowed
+T19 Special characters are allowed
+T20 Contact name must have minimum 1 symbol
+
+T21  Contact last name is required
+T22  Contact name must not be blank
+T23  Numbers are allowed
+T24  Special characters are allowed
+T25  Contact Last Name must have minimum 1 symbol
+
+T26 Customer email is required
+T27 Email must not be blank
+T28 Must contain only one  @
+T29 The <<.>> symbol is required
+T30 Minimum two characters after last <<.>>
+T31 English only letters
+T32 Contact Email should not be repeated with the email of a previously created contact
+
+T33  Contact address is required
+T34 Contact address must not be blank
+T35 Numbers are allowed
+T36 Special characters are allowed
+T37 Contact name must have minimum 1 symbol
+
+T38  Contact Phone Number - Phone Number address is required
+T39  Contact Phone Number – Phone number must not be blank
+T40   Contact Phone Number  – Phone number can only be digits
+T41  Contact Phone Number -  Phone must have minimum 10 symbol
+T42  Contact Phone Number -  Phone must have maximum 15 symbol
+T43   Contact Phone Number  – Special character are not allowed
+T44   Contact Phone Number  – Character are not allowed
+T45   Contact Phone Number - Contact Phone Number should not be repeated with the phone number of a previously created contact
+
+
+T46    Contact Description - Description  is  not required
+T47    Contact Description – Numbers are allowed
+T48    Contact Description – Special characters  and numbers  are allowed
+
     }*/
 
    @AfterMethod
